@@ -1,5 +1,3 @@
-
-
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -8,6 +6,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.sql.*;
+import utils.DB;
 
 /**
  * Servlet implementation class HelloWorld
@@ -38,7 +38,7 @@ public class HelloWorld extends HttpServlet {
 		"<body>\n" +
 		"<h1> Hello World! </h1>\n" +
 		"</body>");
-
+		doSQL(out);
 	}
 
 	/**
@@ -47,6 +47,26 @@ public class HelloWorld extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
+	}
+	
+	public static void doSQL(PrintWriter out) {
+	    try {
+	        DB db = new DB();
+	        ResultSet rs = db.executeSQL("SELECT * FROM user;");
+	        out.println("<html><table>");
+	        while (rs.next()) {
+	            // you only select one field, but you can easily adapt
+	            // this code to have more fields (i.e. table columns)
+	            String nom = rs.getString("nom");
+	            out.println("<tr><td>" + nom + "</td></tr>");
+	        }
+	        out.println("</table></html>");
+	        db.disconnectBD();
+	    } catch (Exception e) {
+
+	        System.err.println("Got an exception! ");
+	        System.err.println(e.getMessage());
+	    }
 	}
 
 }
