@@ -32,12 +32,46 @@ public class HelloWorld extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		out.println
 		("<!DOCTYPE html>\n" +
+		"<html>" +
+				
+		"<style>" +
+		"table {" +
+		  "border-collapse: collapse;" +
+		  "border-spacing: 40px;" +
+		  "width:80%;" +
+		"}" +
+		"th, td {" +
+			  "text-align:center;" +
+			  "padding: 10px;" +
+		"}" +
+		"tbody tr:nth-child(odd) {" +
+		  "background-color: #8BA6E9;" +
+		"}" +
+
+		"tbody tr:nth-child(even) {" +
+		  "background-color: #BED0F4;" +
+		"}" +
+		 "th {" +
+		 	"font-size: 130%;" +
+		 	"color: white;" +
+		 	"background-color: #0000A0;" +
+		 "}" +
+		"</style>" +
+				 
 		"<head>\n"+
 		"<title> Hello World! </title>\n"+
 		"</head>\n"+
 		"<body>\n" +
 		"<h1> Hello World! </h1>\n" +
-		"</body>");
+		"</body>" +
+		
+		"<table border=\"1\">" +
+		  "<tr>" +
+		    "<th>Nom</th>" +
+		    "<th>Descripció</th>" +
+		    "<th>ID</th>" +
+		    "<th>Telèfon</th>" +
+		 "</tr>");
 		doSQL(out);
 	}
 
@@ -50,18 +84,22 @@ public class HelloWorld extends HttpServlet {
 	}
 	
 	public static void doSQL(PrintWriter out) {
-	    try {
-	        DB db = new DB();
-	        ResultSet rs = db.executeSQL("SELECT * FROM user;");
-	        out.println("<html><table>");
-	        while (rs.next()) {
-	            // you only select one field, but you can easily adapt
-	            // this code to have more fields (i.e. table columns)
-	            String nom = rs.getString("nom");
-	            out.println("<tr><td>" + nom + "</td></tr>");
-	        }
-	        out.println("</table></html>");
-	        db.disconnectBD();
+		try {
+		        DB db = new DB();
+		        ResultSet rs = db.executeSQL("SELECT * FROM user;");
+		        ResultSetMetaData rsmd = rs.getMetaData();
+		        int number_of_columns = rsmd.getColumnCount();
+		        while (rs.next()) {
+		        	out.print("<tr>");
+		        	for(int i = 1; i<=number_of_columns; i++) {
+		        		String nom = rs.getString(rsmd.getColumnName(i));
+		        		out.println("<td>" + nom + "</td>");
+		        	}
+		        	out.print("</tr>");
+		        }
+		        out.println("</table></html>");
+		        db.disconnectBD();
+		        
 	    } catch (Exception e) {
 
 	        System.err.println("Got an exception! ");
