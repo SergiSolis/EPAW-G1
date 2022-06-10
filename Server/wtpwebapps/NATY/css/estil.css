@@ -1,0 +1,230 @@
+
+input{
+	width:100%;
+	margin-top: 5px;
+    border:none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    color: white;
+    box-shadow: none;
+
+}
+
+label{
+	font-size: 16px;
+    color: white;
+}
+
+inputplaceholder{
+	font-size:202px;
+}
+
+
+input:valid {
+	border-bottom: 3px solid green;
+    border-radius: 3px;
+}
+input:invalid {
+	border-bottom: 3px solid #673AB7;
+	border-radius: 3px;
+}
+
+input.parsley-success,
+select.parsley-success,
+textarea.parsley-success {
+	border-bottom: 3px solid green;
+	border-radius: 3px;
+}
+
+input.parsley-error,
+select.parsley-error,
+textarea.parsley-error {
+	border-bottom: 3px solid #673AB7;
+	border-radius: 3px;
+}
+
+.server-errors-list {
+  margin: 5px 0px 0px 0px;
+  padding: 5px 0px 0px 0px;
+  list-style-type: none;
+  font-size: 14px;
+  line-height: 1em;
+  color: red;
+  display:inline-block;
+}
+
+.parsley-errors-list {
+  margin: 5px 0px 0px 0px;
+  padding: 5px 0px 0px 0px;
+  list-style-type: none;
+  font-size: 14px;
+  line-height: 1em;
+  opacity: 0;
+  color: red;
+  display:inline-block;
+}
+.parsley-errors-list.filled {
+  opacity: 1;
+  display:inline-block;
+}
+
+
+html {
+   margin: 0px;
+   height: 100%;
+   width: 100%;
+   font-family: Poppins, Arial, "Helvetica Neue", sans-serif;
+   font-weight: 400;
+   font-size: 14px;
+}
+
+body{
+    margin: 0px;
+    width: 100%;
+	background: -webkit-gradient(linear, left top, left bottom, from(#9198e5), to(#e66465)) fixed;
+}
+
+div.box{
+	height: 920px;
+	border-radius:20px;
+	background-color: #191818;
+	padding: 0px 0px 0px 0px;
+	margin: auto;
+	margin-top: 40px;
+	font-family: Poppins, Arial, "Helvetica Neue", sans-serif;
+	font-weight: 400;
+	font-size: 14px;
+	display: table;
+	}
+
+
+
+h2.titulo{
+	text-align:center;
+	margin-top: 15px;
+	margin-bottom:15px;
+	font-size: 29px;
+    color: #fff;
+    font-weight: 500;
+}
+
+div.formulario{
+    
+    width:510px;
+    min-width: 450px;
+    margin: auto;
+    display: table-cell;
+    margin: 0;
+
+}
+
+div.imagen{
+	background: url("image.jpg") top left/cover no-repeat;
+	background-position: center;
+    display: table-cell;
+    width: 510px;
+    box-sizing: inherit;
+    margin:0;
+    border-top-left-radius:20px;
+    border-bottom-left-radius:20px;
+}
+
+@media (max-width: 750px) {
+    
+  div.box{
+  	width: 100%;
+  }
+
+  div.imagen {
+    
+    display:block;
+    width: 100%;
+    padding-top:400px;
+    background-position:center center;
+    box-sizing: inherit;
+    border-bottom-left-radius:0px;
+    border-top-right-radius:20px;
+  }
+   div.formulario {
+    
+    display:block;
+    box-sizing: inherit;
+    width: 100%;
+    min-width: 100px;  
+  }
+}
+
+
+form{
+	width: 90%;
+	margin:auto;
+}
+
+div.input-box{
+
+    margin: auto;
+    margin-top: 13px;
+    padding: 8px 20px 5px 20px;
+    width: 90%;
+    border-radius:5px;
+    border: solid 1px;
+    border-color: white; 
+
+}
+
+
+select{
+    
+    margin-left:10px;
+    border-radius: 5px;
+    padding: 0px 20px;
+    display: inline-block;
+    font-size: 14px;
+    outline: none;
+    border: none;
+
+}
+
+::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+}
+
+
+textarea{
+	width:100%;
+	margin-top: 4px;
+	margin-bottom: 0px;
+    border:none;
+    outline: none;
+    background: transparent;
+    font-size: 16px;
+    color: white;
+    box-shadow: none;
+
+}
+
+button{
+	margin-left: 5px;
+    margin-top: 15px;
+    margin-bottom: 10px;
+	background-color: #57b846;
+	border-radius: 20px;
+	display: inline-block;
+    line-height: 40px;
+    padding: 0px 33px;
+    font-family: Poppins, Arial, "Helvetica Neue", sans-serif;
+    cursor: pointer;
+    color: #fff;
+    font-size: 18px; 
+    outline: none;
+    border: none;
+    font-weight: bold;
+}
+
+div.login, h2.login, button.login{
+	
+	margin-top: 25px
+}
+
+

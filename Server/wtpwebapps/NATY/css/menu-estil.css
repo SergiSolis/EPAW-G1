@@ -1,0 +1,94 @@
+
+.color, .hover-color:hover {
+    color: #fff!important;
+    background-color: #203447;
+}
+
+.bar {
+    overflow: hidden;
+    white-space: normal;
+    border-bottom-style:solid;
+    border-color: #38444d;
+    border-width: 2px;
+}
+
+
+.bar .bar-item {
+    padding: 8px 16px;
+    float: left;
+    width: auto;
+    border: none;
+    display: block;
+    outline: 0;
+    font-family: Verdana,sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+}
+
+.btn, .menu-button {
+    white-space: normal;
+    border: none;
+    display: inline-block;
+    padding: 8px 16px;
+    vertical-align: middle;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    background-color: inherit;
+    text-align: center;
+    cursor: pointer;
+    white-space: nowrap;
+    user-select: none;
+}
+
+
+.bar-block .bar-item {
+    width: 100%;
+    display: block;
+    padding: 8px 16px;
+    text-align: left;
+    border: none;
+    white-space: normal;
+    float: none;
+    outline: 0;
+}
+
+.right {
+    float: right!important;
+}
+
+
+.hide {
+    display: none!important;
+}
+
+.show{
+	display:block!important
+}
+
+.menu-button:hover {
+    color: #000!important;
+    background-color: #ccc!important;
+}
+
+@media (min-width: 993px){
+	.hide-large {
+    	display: none!important;
+	}
+}
+
+@media (max-width: 600px){
+	.hide-small {
+    	display: none!important;
+	}
+}
+
+@media (max-width: 992px) and (min-width: 601px){
+	.hide-medium {
+    	display: none!important;
+	}
+}
+
+
+
+
