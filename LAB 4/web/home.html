@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title> Lab 4 template </title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+        <link rel="stylesheet" href="https://www.w3schools.com/lib/w3-theme-red.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style_home.css">
+    </head>
+    <body>
+        <!-- Begin Navigation -->
+        <div class="w3-bar w3-hover" id="navigation">
+        </div>
+            <!-- End Navigation -->
+        
+            <!-- Begin Content -->	
+        <div class="container-content">
+            <div id="content">
+                <div class="container">
+                    <div class="layout">
+                        <div class="menu_zone">
+                            <div>
+                                <img src="imgs/logo.png" class="logo" />
+                            </div>
+                            <div class="sidebar-menu">
+                                <div class="sidebar-menu_item sidebar-menu_item-active">
+                                    <img src="icons/home.png" class="sidebar-menu_icon" />
+                                    Home
+                                </div>
+                                <div class="sidebar-menu_item">
+                                    <img src="icons/notification.png" class="sidebar-menu_icon" />
+                                    Notifications
+                                </div>
+                                <div class="sidebar-menu_item">
+                                    <img src="icons/messages.png" class="sidebar-menu_icon" />
+                                    Messages
+                                </div>
+                                <div class="sidebar-menu_item">
+                                    <img src="icons/profile.png" class="sidebar-menu_icon" />
+                                    Profile
+                                </div>
+                                <div class="sidebar-menu_item">
+                                    <img src="icons/pets.png" class="sidebar-menu_icon" />
+                                    Pets
+                                </div>
+                                <div class="sidebar-menu_item">
+                                    <img src="icons/more.png" class="sidebar-menu_icon" />
+                                    More
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tweets_zone">
+                            <div class="selected_Page">
+                                <h1 class="title">Home</h1>
+                            </div>
+                            <div class="tweet">
+                                <img class="tweet_profile-logo" src="imgs/profile.jpg" />
+                                <div class="tweet_main">
+                                    <div class="tweet_header">
+                                        <div class="tweet_profile-name">
+                                           Tyler Durden 
+                                        </div>
+                                        <div class="tweet_profile-link">
+                                            @tylerdurden
+                                        </div>
+                                        <div class="tweet_publish_time">
+                                            6h
+                                        </div>
+                                    </div>
+                                    <div class="tweet_content">
+                                        This is your life and it's ending one minute at a time.
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tweet">
+                                <img class="tweet_profile-logo" src="imgs/profile_2.jpeg" />
+                                <div class="tweet_main">
+                                    <div class="tweet_header">
+                                        <div class="tweet_profile-name">
+                                            Vito Corleone
+                                        </div>
+                                        <div class="tweet_profile-link">
+                                            @vitocorleone
+                                        </div>
+                                        <div class="tweet_publish_time">
+                                            12h
+                                        </div>
+                                    </div>
+                                    <div class="tweet_content">
+                                        I'm Gonna Make Him An Offer He Can't Refuse.
+                                        <a href="https://youtube.com">Youtube</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tweet">
+                                <img class="tweet_profile-logo" src="imgs/profile.jpg" />
+                                <div class="tweet_main">
+                                    <div class="tweet_header">
+                                        <div class="tweet_profile-name">
+                                            Frank de la Jungla
+                                        </div>
+                                        <div class="tweet_profile-link">
+                                            @frankdelajungla
+                                        </div>
+                                        <div class="tweet_publish_time">
+                                            20h
+                                        </div>
+                                    </div>
+                                    <div class="tweet_content">
+                                        My snake!!!
+                                        <img class="tweet_image" src="imgs/profile_content.jpg">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tweet">
+                                <img class="tweet_profile-logo" src="imgs/profile_2.jpeg" />
+                                <div class="tweet_main">
+                                    <div class="tweet_header">
+                                        <div class="tweet_profile-name">
+                                            Frank de la Jungla
+                                        </div>
+                                        <div class="tweet_profile-link">
+                                            @frankdelajungla
+                                        </div>
+                                        <div class="tweet_publish_time">
+                                            20h
+                                        </div>
+                                    </div>
+                                    <div class="tweet_content">
+                                        My favorite animal!!!
+                                        <img class="tweet_image" src="imgs/profile_content_2.jpg">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="right_zone">Right Menu</div>
+                    </div>
+                    <script src=".script.js"></script>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            function stack() {
+                var x = document.getElementById("stack");
+                if (x.className.indexOf("w3-show") == -1) {
+                    x.className += " w3-show";
+                } else { 
+                x.className = x.className.replace(" w3-show", "");
+                }
+            }
+        </script>
+    </body>
+</html>
