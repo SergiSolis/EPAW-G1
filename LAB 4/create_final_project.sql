@@ -23,7 +23,7 @@ CREATE TABLE epawtwitter.user(
     birthday DATE,
     dateAccountCreated DATE NOT NULL,
     zipcode VARCHAR(20),
-    CONSTRAINT location_fk FOREIGN KEY (zipcode) REFERENCES location (zipcode));
+    CONSTRAINT location_fk FOREIGN KEY (zipcode) REFERENCES location (zipcode) ON DELETE CASCADE ON UPDATE CASCADE);
     
 CREATE TABLE epawtwitter.tweet(
 	tid INT UNIQUE AUTO_INCREMENT NOT NULL PRIMARY KEY,
@@ -33,7 +33,7 @@ CREATE TABLE epawtwitter.tweet(
     isPrivileged BOOLEAN DEFAULT FALSE,
     parent INT,
     CONSTRAINT parent_fk FOREIGN KEY (parent) REFERENCES tweet (tid) ON DELETE CASCADE ON UPDATE CASCADE,
-    CONSTRAINT uid_fk FOREIGN KEY (uid) REFERENCES epawtwitter.user (uid));
+    CONSTRAINT uid_fk FOREIGN KEY (uid) REFERENCES epawtwitter.user (uid) ON DELETE CASCADE ON UPDATE CASCADE);
     
 CREATE TABLE epawtwitter.pet(
 	pid INT UNIQUE AUTO_INCREMENT NOT NULL PRIMARY KEY,
@@ -53,33 +53,33 @@ CREATE TABLE epawtwitter.like(
 	uid INT NOT NULL,
     tid INT NOT NULL,
     CONSTRAINT junction_like_PK PRIMARY KEY (uid, tid),
-    CONSTRAINT uid_like_fk FOREIGN KEY (uid) REFERENCES epawtwitter.user (uid),
-	CONSTRAINT tid_like_fk FOREIGN KEY (tid) REFERENCES tweet (tid));
+    CONSTRAINT uid_like_fk FOREIGN KEY (uid) REFERENCES epawtwitter.user (uid) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT tid_like_fk FOREIGN KEY (tid) REFERENCES tweet (tid) ON DELETE CASCADE ON UPDATE CASCADE);
 
 CREATE TABLE epawtwitter.retweet(
 	uid INT NOT NULL,
     tid INT NOT NULL,
     CONSTRAINT retweet_PK PRIMARY KEY (uid, tid),
-    CONSTRAINT uid_retweet_fk FOREIGN KEY (uid) REFERENCES epawtwitter.user (uid),
-	CONSTRAINT tid_retweet_fk FOREIGN KEY (tid) REFERENCES tweet (tid));
+    CONSTRAINT uid_retweet_fk FOREIGN KEY (uid) REFERENCES epawtwitter.user (uid) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT tid_retweet_fk FOREIGN KEY (tid) REFERENCES tweet (tid) ON DELETE CASCADE ON UPDATE CASCADE);
 
 CREATE TABLE epawtwitter.follow(
 	uid INT NOT NULL,
     fid INT NOT NULL,
     CONSTRAINT follow_PK PRIMARY KEY (uid, fid),
-    CONSTRAINT uid_follow_fk FOREIGN KEY (uid) REFERENCES epawtwitter.user (uid),
-	CONSTRAINT fid_follow_fk FOREIGN KEY (fid) REFERENCES epawtwitter.user (uid));
+    CONSTRAINT uid_follow_fk FOREIGN KEY (uid) REFERENCES epawtwitter.user (uid) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT fid_follow_fk FOREIGN KEY (fid) REFERENCES epawtwitter.user (uid) ON DELETE CASCADE ON UPDATE CASCADE);
 
 CREATE TABLE epawtwitter.pet_user(
 	uid INT NOT NULL,
     pid INT NOT NULL,
     CONSTRAINT pet_user_PK PRIMARY KEY (uid, pid),
-    CONSTRAINT uid_pet_user_fk FOREIGN KEY (uid) REFERENCES epawtwitter.user (uid),
-	CONSTRAINT pid_pet_user_fk FOREIGN KEY (pid) REFERENCES pet (pid));
+    CONSTRAINT uid_pet_user_fk FOREIGN KEY (uid) REFERENCES epawtwitter.user (uid) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT pid_pet_user_fk FOREIGN KEY (pid) REFERENCES pet (pid) ON DELETE CASCADE ON UPDATE CASCADE);
 
 CREATE TABLE epawtwitter.pet_picture(
 	pid INT NOT NULL,
     piid INT NOT NULL,
     CONSTRAINT pet_picture_PK PRIMARY KEY (pid, piid),
-    CONSTRAINT pid_pet_picture_fk FOREIGN KEY (pid) REFERENCES pet (pid),
-	CONSTRAINT piid_pet_picture_fk FOREIGN KEY (piid) REFERENCES picture (piid));
+    CONSTRAINT pid_pet_picture_fk FOREIGN KEY (pid) REFERENCES pet (pid) ON DELETE CASCADE ON UPDATE CASCADE,
+	CONSTRAINT piid_pet_picture_fk FOREIGN KEY (piid) REFERENCES picture (piid) ON DELETE CASCADE ON UPDATE CASCADE);
