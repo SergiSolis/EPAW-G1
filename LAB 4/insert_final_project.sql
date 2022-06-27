@@ -19,11 +19,11 @@ ALTER TABLE epawtwitter.picture AUTO_INCREMENT = 1;
 
 INSERT INTO epawtwitter.location(zipcode, country, city) VALUES ("08800", "Spain", "Vilanova i la Geltrú");
 
-INSERT INTO epawtwitter.user(name, username, mail, phone, pwd, gender, type, dateAccountCreated) VALUES ("admin", "admin", "admin@gmail.com", "682036242", "Aa123456", "M", "A", "2020-12-01 00:00:00");
-INSERT INTO epawtwitter.user(name, username, mail, phone, pwd, gender, type, dateAccountCreated) VALUES ("toni", "aaaa1", "aaaa1@gmail.com", "682036242", "Aa123456", "M", "U", "2020-12-01 00:00:00");
-INSERT INTO epawtwitter.user(name, username, mail, phone, pwd, gender, type, dateAccountCreated) VALUES ("claudia", "aaaa2", "aaaa2@gmail.com", "682036242", "Aa123456", "F", "U", "2020-12-01 00:00:00");
-INSERT INTO epawtwitter.user(name, username, mail, phone, pwd, gender, type, dateAccountCreated) VALUES ("martina", "aaaa3", "aaaa3@gmail.com", "682036242", "Aa123456", "F", "U", "2020-12-01 00:00:00");
-INSERT INTO epawtwitter.user(name, username, mail, phone, pwd, gender, type, dateAccountCreated, zipcode) VALUES ("mireia", "aaaa4", "aaaa4@gmail.com", "682036242", "Aa123456", "F","U", "2020-12-01 00:00:00", "08800");
+INSERT INTO epawtwitter.user(name, username, mail, phone, pwd, gender, type, dateAccountCreated,profilePicture) VALUES ("admin", "admin", "admin@gmail.com", "682036242", "Aa123456", "M", "A", "2020-12-01 00:00:00","imgs/avatar3.png");
+INSERT INTO epawtwitter.user(name, username, mail, phone, pwd, gender, type, dateAccountCreated,profilePicture) VALUES ("toni", "aaaa1", "aaaa1@gmail.com", "682036242", "Aa123456", "M", "U", "2020-12-01 00:00:00","imgs/avatar3.png");
+INSERT INTO epawtwitter.user(name, username, mail, phone, pwd, gender, type, dateAccountCreated,profilePicture) VALUES ("claudia", "aaaa2", "aaaa2@gmail.com", "682036242", "Aa123456", "F", "U", "2020-12-01 00:00:00","imgs/avatar3.png");
+INSERT INTO epawtwitter.user(name, username, mail, phone, pwd, gender, type, dateAccountCreated,profilePicture) VALUES ("martina", "aaaa3", "aaaa3@gmail.com", "682036242", "Aa123456", "F", "U", "2020-12-01 00:00:00","imgs/avatar3.png");
+INSERT INTO epawtwitter.user(name, username, mail, phone, pwd, gender, type, dateAccountCreated, zipcode,profilePicture) VALUES ("mireia", "aaaa4", "aaaa4@gmail.com", "682036242", "Aa123456", "F","U", "2020-12-01 00:00:00", "08800","imgs/avatar3.png");
 
 INSERT INTO epawtwitter.tweet(postDateTime, content, isPrivileged, uid) VALUES ("2020-12-01 00:00:00", "Hola", False, 1);
 INSERT INTO epawtwitter.tweet(postDateTime, content, isPrivileged, parent, uid) VALUES ("2021-12-01 00:00:00", "Alo", False, 1, 1);
